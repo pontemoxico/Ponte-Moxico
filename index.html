@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponte Moxico | Ajuda digital, negócios e entregas</title>
+<meta name="description" content="Ajuda digital (celular, e-mail, Multicaixa Express, e-Kwanza, Unitel Money), intermediação de compras e vendas e entregas de moto no Moxico.">
+<meta name="theme-color" content="#0D3B33">
+<style>
+  :root{
+    --ink:#0D3B33;
+    --paper:#F4F7F5;
+    --sun:#FFB703;
+    --text:#17201D;
+    --muted:#52605B;
+    --line:#C9D5CF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    color:var(--text);
+    background:var(--paper);
+    padding-bottom:84px;
+  }
+  h1,h2,h3{line-height:1.1;letter-spacing:-0.02em;margin:0}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  :focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+  .hero{background:var(--ink);color:var(--paper)}
+  .topo{display:flex;align-items:baseline;justify-content:space-between;padding-top:18px}
+  .marca{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;text-decoration:none}
+  .marca span{font-weight:400;opacity:.75;margin-left:6px}
+  .hero-corpo{padding:44px 0 60px}
+  .hero h1{font-size:clamp(2.15rem,8.5vw,4rem);font-weight:800;max-width:15ch}
+  .hero p{font-size:1.15rem;max-width:36ch;margin:22px 0 30px;color:#D9E6E0}
+  .botoes{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-block;padding:15px 24px;border-radius:10px;
+    font-weight:700;font-size:1.05rem;text-decoration:none;text-align:center;
+    background:var(--sun);color:var(--ink);border:2px solid var(--sun);
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .btn.claro{background:transparent;color:var(--paper);border-color:#5E8A7F}
+  .btn.escuro{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+  section{padding:56px 0}
+  h2{font-size:clamp(1.7rem,5.5vw,2.4rem);font-weight:800;margin-bottom:8px}
+  .intro{color:var(--muted);max-width:52ch;margin:0 0 28px}
+
+  .servicos{border-bottom:1px solid var(--line)}
+  details{border-top:1px solid var(--line)}
+  summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:22px 0;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:2rem;font-weight:300;line-height:1;color:var(--ink);flex:none}
+  details[open] summary::after{content:"\2212"}
+  summary h3{font-size:clamp(1.35rem,4.5vw,1.8rem);font-weight:800}
+  summary small{display:block;font-size:1rem;font-weight:400;color:var(--muted);letter-spacing:0;margin-top:6px}
+  .detalhe{padding:0 0 30px;display:grid;gap:22px}
+  .detalhe h4{margin:0 0 8px;font-size:1.05rem}
+  .detalhe ul{margin:0;padding-left:20px}
+  .detalhe li{margin:4px 0}
+  .nota{background:#E6EEEA;border-left:5px solid var(--ink);padding:14px 16px;border-radius:0 8px 8px 0}
+  @media (min-width:760px){
+    .detalhe{grid-template-columns:1fr 1fr}
+    .detalhe .nota,.detalhe .acao{grid-column:1 / -1}
+  }
+
+  .passos{background:#E9F0EC}
+  ol.lista{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:22px;counter-reset:p}
+  ol.lista li{counter-increment:p;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+  ol.lista li::before{
+    content:counter(p);
+    width:52px;height:52px;border-radius:50%;
+    background:var(--ink);color:var(--sun);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1.4rem;
+  }
+  ol.lista strong{display:block;font-size:1.15rem}
+  ol.lista span{color:var(--muted)}
+  @media (min-width:900px){ol.lista{grid-template-columns:repeat(4,1fr)} ol.lista li{grid-template-columns:1fr} }
+
+  .nunca{margin-top:40px;background:var(--ink);color:var(--paper);border-radius:14px;padding:26px 24px}
+  .nunca h3{font-size:1.4rem;margin-bottom:12px}
+  .nunca ul{margin:0;padding-left:20px}
+  .nunca li{margin:8px 0}
+
+  .sobre p{max-width:60ch;font-size:1.1rem}
+
+  .contactos{background:var(--ink);color:var(--paper)}
+  .contactos .intro{color:#D9E6E0}
+  dl{margin:0 0 30px;display:grid;gap:18px}
+  dt{font-size:.95rem;color:#A9C4BA}
+  dd{margin:2px 0 0;font-size:1.2rem;font-weight:600}
+  dd a{text-decoration:underline;text-underline-offset:4px}
+  @media (min-width:760px){dl{grid-template-columns:repeat(2,1fr)}}
+
+  footer{padding:26px 0 30px;color:var(--muted);font-size:.95rem}
+
+  .barra{
+    position:fixed;left:0;right:0;bottom:0;z-index:10;
+    background:var(--paper);border-top:1px solid var(--line);
+    padding:10px 16px;
+  }
+  .barra .btn{display:block;width:100%}
+  @media (min-width:760px){.barra{display:none} body{padding-bottom:0}}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topo">
+      <a class="marca" href="#">Ponte<span>Moxico</span></a>
+    </div>
+    <div class="hero-corpo">
+      <h1>Ajuda digital, negócios e entregas no Moxico.</h1>
+      <p>Ensino a usar o celular e o dinheiro digital, ajudo a comprar e vender com segurança e levo a sua encomenda de moto.</p>
+      <div class="botoes">
+        <a class="btn wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Ponte%20Moxico%20e%20preciso%20de%20ajuda.">Falar no WhatsApp</a>
+        <a class="btn claro" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="servicos" class="servicos">
+  <div class="wrap">
+    <h2>Serviços</h2>
+    <p class="intro">Toque num serviço para ver o que está incluído e como funciona.</p>
+
+    <details open>
+      <summary>
+        <div>
+          <h3>Ajuda digital</h3>
+          <small>Aprenda a usar o celular e o dinheiro móvel sem medo.</small>
+        </div>
+      </summary>
+      <div class="detalhe">
+        <div>
+          <h4>O que ensino</h4>
+          <ul>
+            <li>Usar o celular: chamadas, WhatsApp, câmara, internet</li>
+            <li>Criar e usar e-mail</li>
+            <li>Multicaixa Express, e-Kwanza e Unitel Money</li>
+            <li>Como reconhecer burlas e proteger a sua conta</li>
+            <li>Currículo e carta de candidatura</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Como funciona</h4>
+          <ul>
+            <li>Aula individual, em casa ou num local combinado</li>
+            <li>Também por chamada ou WhatsApp, quando faz sentido</li>
+            <li>Preço combinado antes, por aula ou por assunto</li>
+          </ul>
+        </div>
+        <div class="nota">Nunca peço nem guardo a sua senha ou PIN. É você que digita, eu só explico o caminho.</div>
+        <div class="acao"><a class="btn escuro wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Quero%20ajuda%20digital%20%28celular%2C%20e-mail%20ou%20dinheiro%20m%C3%B3vel%29.">Pedir ajuda digital</a></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <div>
+          <h3>Intermediação</h3>
+          <small>Compre ou venda com alguém de confiança no meio.</small>
+        </div>
+      </summary>
+      <div class="detalhe">
+        <div>
+          <h4>O que intermedeio</h4>
+          <ul>
+            <li>Celulares</li>
+            <li>Computadores, TVs, caixas de som e outros eletrónicos</li>
+            <li>Eletrodomésticos</li>
+            <li>Terrenos</li>
+            <li>Oportunidades de emprego</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Como funciona</h4>
+          <ul>
+            <li>Você diz o que quer comprar ou vender</li>
+            <li>Procuro a outra parte e verifico o produto</li>
+            <li>Combinamos o encontro e o negócio fecha entre comprador e vendedor</li>
+            <li>A comissão é combinada antes e confirmada por mensagem</li>
+          </ul>
+        </div>
+        <div class="nota">Não seguro dinheiro de ninguém: o pagamento é feito diretamente ao vendedor, na minha presença. Nos terrenos, ajudo a verificar os documentos e aconselho confirmar com quem entende do assunto antes de pagar.</div>
+        <div class="acao"><a class="btn escuro wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Quero%20ajuda%20para%20comprar%20ou%20vender.%20O%20que%20procuro%2Fvendo%20%C3%A9%3A%20">Pedir intermediação</a></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <div>
+          <h3>Entregas de moto</h3>
+          <small>Levo a sua encomenda até à porta, rápido e com confirmação.</small>
+        </div>
+      </summary>
+      <div class="detalhe">
+        <div>
+          <h4>O que entrego</h4>
+          <ul>
+            <li>Encomendas de lojas e vendedores</li>
+            <li>Documentos e envelopes</li>
+            <li>Compras e recados (pagar uma conta, levantar um pacote)</li>
+            <li>Encomendas de uma pessoa para outra</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Como funciona</h4>
+          <ul>
+            <li>Diga onde levanto e onde entrego</li>
+            <li>Digo o preço, que depende da distância, antes de sair</li>
+            <li>Ao entregar, envio uma foto ou confirmação por mensagem</li>
+          </ul>
+        </div>
+        <div class="nota">Só transporto o que sei o que é. Objetos de valor são entregues em mão, a quem você indicar.</div>
+        <div class="acao"><a class="btn escuro wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Preciso%20de%20uma%20entrega.%20Levantar%20em%3A%20...%20Entregar%20em%3A%20...%20O%20que%20%C3%A9%3A%20...">Pedir uma entrega</a></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="como" class="passos">
+  <div class="wrap">
+    <h2>Como trabalho</h2>
+    <p class="intro">O processo é o mesmo nos três serviços.</p>
+    <ol class="lista">
+      <li><div><strong>Você escreve</strong><span>Diga no WhatsApp o que precisa.</span></div></li>
+      <li><div><strong>Combinamos o preço</strong><span>Digo o valor antes de começar. Sem surpresas.</span></div></li>
+      <li><div><strong>Eu faço</strong><span>Ensino, negocio ou entrego, no dia e hora combinados.</span></div></li>
+      <li><div><strong>Confirmamos</strong><span>Você confirma que ficou tudo certo. Nas entregas envio foto.</span></div></li>
+    </ol>
+
+    <div class="nunca">
+      <h3>O que eu nunca faço</h3>
+      <ul>
+        <li>Nunca peço nem guardo a sua senha ou PIN.</li>
+        <li>Nunca seguro o dinheiro de compradores ou vendedores.</li>
+        <li>Nunca anuncio o que não vi ou não confirmei.</li>
+        <li>Nunca transporto o que não sei o que é.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="sobre">
+  <div class="wrap">
+    <h2>Sobre a Ponte Moxico</h2>
+    <p>A Ponte Moxico liga as pessoas ao que precisam: saber usar o celular e o dinheiro digital, fazer um bom negócio e receber a encomenda em casa.</p>
+    <p>Trabalho sozinho, atendo cada cliente pessoalmente e combino sempre o preço antes. A minha reputação é o meu maior bem, por isso só faço o que posso garantir.</p>
+  </div>
+</section>
+
+<section id="contactos" class="contactos">
+  <div class="wrap">
+    <h2>Onde me encontrar</h2>
+    <p class="intro">O caminho mais rápido é o WhatsApp. Respondo assim que puder.</p>
+    <dl>
+      <div><dt>WhatsApp e telefone</dt><dd><a href="tel:+244945867536">945 867 536</a></dd></div>
+      <div><dt>Zona de atendimento</dt><dd>Bairro Capango, Luau, Moxico Leste</dd></div>
+      <div><dt>Horário</dt><dd>Segunda a sábado, das 7h às 19h</dd></div>
+    </dl>
+    <a class="btn wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Ponte%20Moxico%20e%20preciso%20de%20ajuda.">Falar no WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Ponte Moxico. Todos os direitos reservados.</div>
+</footer>
+
+<div class="barra">
+  <a class="btn wa" href="https://wa.me/244945867536?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Ponte%20Moxico%20e%20preciso%20de%20ajuda.">Falar no WhatsApp</a>
+</div>
+
+</body>
+  </html>
